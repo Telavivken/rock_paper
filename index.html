@@ -29,7 +29,82 @@
             }
 
         }
-        console.log(getComputerChoice())
+        function round(playerSelection,computerSelection){
+             playerSelection = playerSelection.toUpperCase()
+             computerSelection = computerSelection.toUpperCase()
+
+             if (playerSelection == "PAPER" && computerSelection == "ROCK"){
+
+                return "player wins"
+
+
+
+             }
+             else if (playerSelection == "ROCK" && computerSelection == "SCISSORS"){
+                return "player wins"
+
+
+             }
+             else if (playerSelection == "SCISSORS" && computerSelection == "PAPER"){
+                return "player wins"
+
+
+             }
+             else if (playerSelection ==computerSelection){
+                return "DRAW"
+
+
+             }
+
+
+
+             else{
+                return "computer wins"
+             }
+
+            
+
+
+        }
+        
+        function game(){
+            let player_points = 0
+            let computer_points = 0
+
+            for(let i=0;i<5;i++){
+                let input = prompt("Rock,paper or Scissors? ")
+                let round_result = round(input,getComputerChoice())
+                if (round_result == "computer wins" )  {
+                    computer_points++
+                    console.log(round_result)
+
+
+                }
+                else if ( round_result == "player wins"){
+                    player_points++
+                    console.log(round_result)
+                   
+                }
+                else{
+                    console.log(round_result)
+                }
+                
+
+                
+
+            }
+            if (player_points>computer_points){
+                return "you won the game"
+
+            }
+            else{
+                return "You lost the game"
+            }
+
+
+
+        }
+        console.log(game())
 
 
 
